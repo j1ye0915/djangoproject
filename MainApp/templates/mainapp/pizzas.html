@@ -1,0 +1,18 @@
+{% extends "MainApp/base.html" %}
+
+{% block content %}
+
+<p> {{ pizza }}</p>
+
+<ul>
+    {% for t in toppings %}
+
+    <li>{{ t.topping_name }}</li>
+
+    {% empty %}
+    <li>No Image</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}

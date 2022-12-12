@@ -1,0 +1,21 @@
+{% extends "MainApp/base.html" %}
+
+{% block content %}
+
+<p> Check The Menu Here</p>
+
+<ul>
+    {% for menu in all_menu %}
+    <li>
+        <a href="{% url 'MainApp:menu' %}"> {{ menu }} </a>
+    </li>
+
+    {% empty %}
+    <li>No pizza yet</li>
+    {% endfor %}
+</ul>
+
+
+<p> Click on the pizza to see the detail</p>
+
+{% endblock content %}
