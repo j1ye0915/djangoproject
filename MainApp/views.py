@@ -17,15 +17,3 @@ def pizzas(request,pizza_id):
     context = {'pizza':p,'toppings':toppings}
 
     return render(request, 'MainApp/pizzas.html', context)
-
-def uploadInfo(request):
-    if request.method == 'POST':
-        # img = request.FILES.get('photo')
-        # user = request.FILES.get('photo').name
-        new_img = models.Avatar(
-            photo=request.FILES.get('photo'),
-            user=request.FILES.get('photo').name 
-        )
-        new_img.save()
- 
-    return render(request, 'upload.html')
